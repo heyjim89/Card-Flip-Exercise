@@ -1,0 +1,30 @@
+
+/*@Jim Dwyer
+@RefactorU HTML1 Card Flip
+@Monday June 15th 2015*/
+
+.front{
+	position:absolute;
+	-webkit-backface-visibility: hidden;
+	transition: 1.3s;
+}
+.back{
+	-webkit-backface-visibility: hidden;
+	-webkit-transform:rotateY(-180deg);
+	transition: 1.3s;
+	-webkit-perspective: 500px;
+}
+.portfolio-item:hover > .front{
+	-webkit-transform:rotateY(180deg);
+	-webkit-transform-style: preserve-3d;
+	transition: 1.3s;
+	-webkit-perspective: 600px;
+	
+}
+.portfolio-item:hover > .back{
+	-webkit-transform:rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	transition: 1.3s;
+	transform: perspective( 600px );
+	perspective-origin: 25% 75%;
+}
